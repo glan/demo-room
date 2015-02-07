@@ -1,0 +1,48 @@
+/**
+ * © 2015 - Glan Thomas & Leslie Dutton
+ */
+body {
+  margin: 0;
+}
+.scene {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  -webkit-perspective: 1000px;
+}
+.scene .room {
+  position: relative;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transform-origin: 300px 300px 0;
+}
+.scene .room > * {
+  position: absolute;
+  -webkit-transform-origin: 0 0;
+  border: 1px solid #AAA;
+}
+.scene .room > *.floor {
+  width: 600px;
+  height: 600px;
+  background: #CCC;
+}
+.scene .room > *.wall {
+  -webkit-transform: rotateX(90deg);
+  height: 200px;
+  background: #EEE;
+}
+.scene .room > *.wall.left {
+  width: 600px;
+  -webkit-transform: rotateZ(90deg) rotateX(90deg);
+}
+.scene .room > *.wall.right {
+  width: 600px;
+  -webkit-transform-origin: 100% 0;
+  -webkit-transform: rotateZ(-90deg) rotateX(90deg);
+}
+.scene .room > *.wall.back {
+  width: 600px;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1haW4ubGVzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7QUFJQTtFQUNFLFNBQUE7O0FBR0Y7RUFDRSxlQUFBO0VBQ0EsT0FBQTtFQUFTLFFBQUE7RUFDVCxNQUFBO0VBQVEsU0FBQTtFQUNSLDJCQUFBOztBQUpGLE1BS0U7RUFDRSxrQkFBQTtFQUNBLG9DQUFBO0VBQ0EsdUNBQUE7O0FBUkosTUFLRSxNQUlFO0VBQ0Usa0JBQUE7RUFDQSw2QkFBQTtFQUNBLHNCQUFBOztBQUNBLE1BUkosTUFJRSxJQUlHO0VBQ0MsWUFBQTtFQUNBLGFBQUE7RUFDQSxnQkFBQTs7QUFFRixNQWJKLE1BSUUsSUFTRztFQUNDLG1CQUFtQixjQUFuQjtFQUNBLGFBQUE7RUFDQSxnQkFBQTs7QUFDQSxNQWpCTixNQUlFLElBU0csS0FJRTtFQUNDLFlBQUE7RUFDQSxtQkFBbUIsZUFBZSxjQUFsQzs7QUFFRixNQXJCTixNQUlFLElBU0csS0FRRTtFQUNDLFlBQUE7RUFDQSxnQ0FBQTtFQUNBLG1CQUFtQixnQkFBZ0IsY0FBbkM7O0FBRUYsTUExQk4sTUFJRSxJQVNHLEtBYUU7RUFDQyxZQUFBIiwiZmlsZSI6Im1haW4uY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLyoqXG4gKiDCqSAyMDE1IC0gR2xhbiBUaG9tYXMgJiBMZXNsaWUgRHV0dG9uXG4gKi9cblxuYm9keSB7XG4gIG1hcmdpbjogMDtcbn1cblxuLnNjZW5lIHtcbiAgcG9zaXRpb246IGZpeGVkO1xuICBsZWZ0OiAwOyByaWdodDogMDtcbiAgdG9wOiAwOyBib3R0b206IDA7XG4gIC13ZWJraXQtcGVyc3BlY3RpdmU6IDEwMDBweDtcbiAgLnJvb20ge1xuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICAtd2Via2l0LXRyYW5zZm9ybS1zdHlsZTogcHJlc2VydmUtM2Q7XG4gICAgLXdlYmtpdC10cmFuc2Zvcm0tb3JpZ2luOiAzMDBweCAzMDBweCAwO1xuICAgID4gKiB7XG4gICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgICAtd2Via2l0LXRyYW5zZm9ybS1vcmlnaW46IDAgMDtcbiAgICAgIGJvcmRlcjogMXB4IHNvbGlkICNBQUE7XG4gICAgICAmLmZsb29yIHtcbiAgICAgICAgd2lkdGg6IDYwMHB4O1xuICAgICAgICBoZWlnaHQ6IDYwMHB4O1xuICAgICAgICBiYWNrZ3JvdW5kOiAjQ0NDO1xuICAgICAgfVxuICAgICAgJi53YWxsIHtcbiAgICAgICAgLXdlYmtpdC10cmFuc2Zvcm06IHJvdGF0ZVgoOTBkZWcpO1xuICAgICAgICBoZWlnaHQ6IDIwMHB4O1xuICAgICAgICBiYWNrZ3JvdW5kOiAjRUVFO1xuICAgICAgICAmLmxlZnQge1xuICAgICAgICAgIHdpZHRoOiA2MDBweDtcbiAgICAgICAgICAtd2Via2l0LXRyYW5zZm9ybTogcm90YXRlWig5MGRlZykgcm90YXRlWCg5MGRlZyk7XG4gICAgICAgIH1cbiAgICAgICAgJi5yaWdodCB7XG4gICAgICAgICAgd2lkdGg6IDYwMHB4O1xuICAgICAgICAgIC13ZWJraXQtdHJhbnNmb3JtLW9yaWdpbjogMTAwJSAwO1xuICAgICAgICAgIC13ZWJraXQtdHJhbnNmb3JtOiByb3RhdGVaKC05MGRlZykgcm90YXRlWCg5MGRlZyk7XG4gICAgICAgIH1cbiAgICAgICAgJi5iYWNrIHtcbiAgICAgICAgICB3aWR0aDogNjAwcHg7XG4gICAgICAgIH1cbiAgICAgIH1cbiAgICB9XG4gIH1cbn1cbiJdLCJzb3VyY2VSb290IjoiL3NvdXJjZS8ifQ== */

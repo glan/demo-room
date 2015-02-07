@@ -1,0 +1,46 @@
+/**
+ * © 2015 - Glan Thomas & Leslie Dutton
+ */
+
+body {
+  margin: 0;
+}
+
+.scene {
+  position: fixed;
+  left: 0; right: 0;
+  top: 0; bottom: 0;
+  -webkit-perspective: 1000px;
+  .room {
+    position: relative;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform-origin: 300px 300px 0;
+    > * {
+      position: absolute;
+      -webkit-transform-origin: 0 0;
+      border: 1px solid #AAA;
+      &.floor {
+        width: 600px;
+        height: 600px;
+        background: #CCC;
+      }
+      &.wall {
+        -webkit-transform: rotateX(90deg);
+        height: 200px;
+        background: #EEE;
+        &.left {
+          width: 600px;
+          -webkit-transform: rotateZ(90deg) rotateX(90deg);
+        }
+        &.right {
+          width: 600px;
+          -webkit-transform-origin: 100% 0;
+          -webkit-transform: rotateZ(-90deg) rotateX(90deg);
+        }
+        &.back {
+          width: 600px;
+        }
+      }
+    }
+  }
+}
